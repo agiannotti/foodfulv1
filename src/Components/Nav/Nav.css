@@ -1,0 +1,42 @@
+.full-nav {
+  background-color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 17px;
+  padding: 0px 0px 15px 0px;
+}
+
+/* Style the links inside the navigation bar */
+.full-nav a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 0px 10px 0px 10px;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Change the color of links on hover */
+.full-nav a:hover {
+  background-color: #3d3d3d;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+/* Add a color to the active/current link */
+.full-nav a.active {
+  background-color: #3d3d3d;
+  border: 17px;
+  width: 20%;
+  color: white;
+  text-align: center;
+  margin: auto;
+}
+
+.full-nav button {
+  border: none;
+  background-color: #ffffff;
+}
