@@ -5,9 +5,11 @@ import history from './Context/history';
 
 import Main from './Components/Main/Main';
 import Mission from './Components/Mission/Mission';
-import Locate from './Components/Foodful/Resources';
+import Locate from './Components/Foodful/LocatePage';
 import Help from './Components/Help/Help';
-import Add from './Components/Add/Add';
+import AddResource from './Components/Add/AddResource';
+import AddComment from './Components/Add/AddComment';
+import EditResource from './Components/Edit/EditResource';
 
 // import PrivateRoute from './Components/Utilities/PrivateRoute';
 
@@ -19,7 +21,9 @@ function App() {
         <Route exact path='/mission' component={Mission} />
         <Route exact path='/locate' component={Locate} />
         <Route exact path='/help' component={Help} />
-        <Route exact path='/add' component={Add} />
+        <Route exact path='/add' component={AddResource} />
+        <Route exact path='/comment' component={AddComment} />
+        <Route exact path='/edit' component={EditResource} />
       </Router>
     </div>
   );

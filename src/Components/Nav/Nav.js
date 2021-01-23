@@ -15,17 +15,3 @@ export default function Nav() {
     </div>
   );
 }
-
-//
-//   /* <Link to='/list'>
-// <button>
-//       <img
-//       className='burger-menu'
-//       src={menu}
-//       alt='menu'
-//       width='40px'
-//       height='36px'
-//     />
-//   </button>
-// </Link> */
-//

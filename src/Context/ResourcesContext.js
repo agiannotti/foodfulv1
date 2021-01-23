@@ -1,26 +1,21 @@
-import React from 'react';
-
-export const nullResource = {
-  title: '',
-  content: '',
-  zipcode: '',
-  date_published: '',
-};
-
-export const ResourceContext = React.createContext({
-  resource: nullResource,
+import React, { Component, createContext } from 'react';
+const ResourceContext = createContext({
+  resourceList: [],
   error: null,
   setError: () => {},
   clearError: () => {},
-  setResource: () => {},
-  clearResource: () => {},
+  setResourceList: () => {},
 });
 
-export class ResourceProvider extends React.Component {
+export default ResourceContext;
+
+export class ResourceProvider extends Component {
   state = {
+    resourceList: [],
     error: null,
-    isLoaded: false,
-    resource: nullResource,
+  };
+  setResourceList = (resourceList) => {
+    this.setState({ resourceList });
   };
 
   setError = (error) => {
@@ -32,24 +27,14 @@ export class ResourceProvider extends React.Component {
     this.setState({ error: null });
   };
 
-  setResource = (resource) => {
-    this.setState({ resource });
-  };
-
-  clearResource = () => {
-    this.setState({ nullResource });
-  };
-
   render() {
     const value = {
-      resource: this.state.resource,
+      resourceList: this.state.resourceList,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
-      setResource: this.setResource,
-      clearResource: this.clearResource,
+      setResourceList: this.setResourceList,
     };
-
     return (
       <ResourceContext.Provider value={value}>
         {this.props.children}

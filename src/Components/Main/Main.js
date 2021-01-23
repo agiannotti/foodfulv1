@@ -7,6 +7,7 @@ import Nav from '../Nav/Nav';
 export default function Main() {
   return (
     <div>
+      <header className='tiny__header'></header>
       <section className='App-header'>
         <Nav />
       </section>
@@ -98,7 +99,7 @@ export default function Main() {
           </div>
         </div>
       </section>
-      {/* <footer>&#169; AGiannotti 2021</footer> */}
+      <footer className='tiny__footer'>&#169; AGiannotti 2021</footer>
     </div>
   );
 }

@@ -1,0 +1,58 @@
+.Resource__main {
+  display: flex;
+  flex-direction: column;
+}
+
+.Resource__details {
+  border-style: solid;
+  width: 92%;
+  margin: auto;
+  margin-bottom: 36px;
+  padding-top: 1px;
+  border-radius: 9px;
+  border-color: #bea2a2;
+  color: #ffffff;
+  background-color: #bea2a2;
+  filter: drop-shadow(0 0 0.2rem #bea2a2);
+  text-shadow: 0.1rem 0.1rem #bea2a2;
+  overflow-wrap: break-word;
+}
+
+.Resource__header h2 {
+  margin-top: -12px;
+}
+
+.Resource__header {
+  padding-bottom: 30px;
+}
+
+.Resource__desc {
+  padding: 10px 10px 30px 10px;
+}
+
+.Resource__item {
+  display: block;
+  text-align: center;
+}
+
+.Resource__item button {
+  display: block;
+  text-align: center;
+  height: 20px;
+}
+
+.Add_Comment_Button {
+  height: 60px;
+  width: 100px;
+  margin-right: 4px;
+  border-style: none;
+  border-radius: 8px;
+}
+
+.Edit_Details_Button {
+  height: 60px;
+  width: 100px;
+  margin-left: 4px;
+  border-style: none;
+  border-radius: 8px;
+}
