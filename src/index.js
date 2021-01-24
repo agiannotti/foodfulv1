@@ -5,12 +5,15 @@ import App from './App';
 import { Router } from 'react-router-dom';
 import history from './Context/history';
 import { ResourceProvider } from './Context/ResourcesContext';
+import { NewResourceProvider } from './Context/NewResourceContext';
 
 ReactDOM.render(
   <Router history={history}>
-    <ResourceProvider>
-      <App />
-    </ResourceProvider>
+    <NewResourceProvider>
+      <ResourceProvider>
+        <App />
+      </ResourceProvider>
+    </NewResourceProvider>
   </Router>,
   document.getElementById('root')
 );

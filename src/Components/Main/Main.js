@@ -6,7 +6,7 @@ import Nav from '../Nav/Nav';
 
 export default function Main() {
   return (
-    <div>
+    <div className='border-main'>
       <header className='tiny__header'></header>
       <section className='App-header'>
         <Nav />

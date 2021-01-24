@@ -1,7 +1,9 @@
 import React, { Component, createContext } from 'react';
+
 const ResourceContext = createContext({
   resourceList: [],
   error: null,
+  addResource: () => {},
   setError: () => {},
   clearError: () => {},
   setResourceList: () => {},
@@ -16,6 +18,10 @@ export class ResourceProvider extends Component {
   };
   setResourceList = (resourceList) => {
     this.setState({ resourceList });
+  };
+
+  addResource = () => {
+    this.setState({});
   };
 
   setError = (error) => {

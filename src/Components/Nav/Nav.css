@@ -1,5 +1,5 @@
 .full-nav {
-  background-color: #ffffff;
+  /* background-color: #3d3d3d; */
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -27,7 +27,7 @@
 
 /* Add a color to the active/current link */
 .full-nav a.active {
-  background-color: #3d3d3d;
+  background-color: #7c6363;
   border: 17px;
   width: 20%;
   color: white;

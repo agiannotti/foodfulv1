@@ -1,30 +1,52 @@
 import config from '../config';
+const ResourceURL = `${config.API_ENDPOINT}/resources`;
+const ResourceAuthorization = `Bearer ${config.API_KEY}`;
 
-const FoodfulApiService = {
+const ResourceApiService = {
   getResources() {
-    return fetch(`${config.API_ENDPOINT}/resources`, {
+    return fetch(ResourceURL, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
-        Authorization: `Bearer ${config.API_KEY}`,
+        Authorization: ResourceAuthorization,
       },
     }).then((res) => {
       return !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
     });
   },
+
+  postNewResource(title, context, zipcode, date_published) {
+    const resource = {
+      title,
+      context,
+      zipcode,
+      date_published,
+    };
+    return fetch(ResourceURL, {
+      method: 'POST',
+      body: JSON.stringify(resource),
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: ResourceAuthorization,
+      },
+    }).then((res) => {
+      return !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
+    });
+  },
+
   deleteResource(id) {
     return fetch(`${config.API_ENDPOINT}/resources/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',
-        Authorization: `Bearer ${config.API_KEY}`,
+        Authorization: ResourceAuthorization,
       },
       getSingleResource(param) {
         return fetch(`${config.API_ENDPOINT}/resources/${param}`, {
           method: 'GET',
           headers: {
             'Content-type': 'application/json',
-            Authorization: `Bearer ${config.API_KEY}`,
+            Authorization: ResourceAuthorization,
           },
         }).then((res) => {
           !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
@@ -32,6 +54,19 @@ const FoodfulApiService = {
       },
     });
   },
+
+  patchResource(id, title, content, zipcode, date_published) {
+    return fetch(`${ResourceURL}/${id}`, {
+      method: 'POST',
+      body: JSON.stringify(id, title, content, zipcode, date_published),
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: ResourceAuthorization,
+      },
+    }).then((res) => {
+      return !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
+    });
+  },
 };
 
-export default FoodfulApiService;
+export default ResourceApiService;

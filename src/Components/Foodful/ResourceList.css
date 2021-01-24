@@ -1,38 +1,44 @@
 .Resource__main {
   display: flex;
   flex-direction: column;
+  border-radius: 13px;
 }
 
 .Resource__details {
   border-style: solid;
   width: 92%;
+  max-height: 600px;
   margin: auto;
   margin-bottom: 36px;
   padding-top: 1px;
-  border-radius: 9px;
-  border-color: #bea2a2;
+  border-radius: 13px;
+  border: none;
   color: #ffffff;
-  background-color: #bea2a2;
-  filter: drop-shadow(0 0 0.2rem #bea2a2);
-  text-shadow: 0.1rem 0.1rem #bea2a2;
+  background-color: #3d3d3d;
+  filter: drop-shadow(0 0.1rem 0.1rem #000000);
   overflow-wrap: break-word;
+  /* color: #e6dede; */
 }
 
-.Resource__header h2 {
-  margin-top: -12px;
+.Resource__heading {
+  /* margin-top: -12px; */
+  margin: 10px;
+  /* padding: 0; */
 }
 
 .Resource__header {
-  padding-bottom: 30px;
+  margin: 5px;
+  padding-bottom: 0;
 }
 
 .Resource__desc {
-  padding: 10px 10px 30px 10px;
+  padding: 15px;
 }
 
 .Resource__item {
   display: block;
   text-align: center;
+  margin: 10px;
 }
 
 .Resource__item button {
@@ -47,6 +53,8 @@
   margin-right: 4px;
   border-style: none;
   border-radius: 8px;
+  filter: drop-shadow(0 0.1rem 0.1rem #000000);
+  /* background-color: #e6dede; */
 }
 
 .Edit_Details_Button {
@@ -55,4 +63,6 @@
   margin-left: 4px;
   border-style: none;
   border-radius: 8px;
+  filter: drop-shadow(0 0.1rem 0.1rem #000000);
+  /* background-color: #e6dede; */
 }

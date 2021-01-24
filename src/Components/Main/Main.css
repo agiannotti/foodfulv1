@@ -1,5 +1,5 @@
 .logo-main {
-  filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
+  filter: drop-shadow(0 0.1rem 0.1rem #000000);
 }
 .main-section {
   font-size: 18px;
@@ -9,10 +9,12 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  border-radius: 13px;
+  filter: drop-shadow(0 0.1rem 0.1rem #000000);
 }
 .main-search {
-  filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
-  background-color: #ece1e1;
+  filter: drop-shadow(0 0.1rem 0.1rem #000000);
+  background-color: #c7b3b3;
   width: 247px;
   height: 100px;
   border: none;
@@ -29,7 +31,7 @@
   flex-direction: column;
   text-align: center;
   background-color: #3d3d3d;
-  filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
+  filter: drop-shadow(0 0.1rem 0.1rem #000000);
   border-radius: 18px;
   color: #fdfdfd;
 }
@@ -53,7 +55,7 @@
   background-color: #3d3d3d;
   border-radius: 25px;
   height: 2px;
-  filter: drop-shadow(0 0 0.1rem rgb(0, 0, 0));
+  filter: drop-shadow(0 0.1rem 0.1rem #000000);
 } */
 
 .tiny__footer {
@@ -61,7 +63,7 @@
   background-color: #3d3d3d;
   border-radius: 25px;
   height: 12px;
-  filter: drop-shadow(0 0 0.1rem rgb(0, 0, 0));
+  filter: drop-shadow(0 0.1rem 0.1rem #000000);
   color: #ffffff;
   width: 45%;
   margin: auto;

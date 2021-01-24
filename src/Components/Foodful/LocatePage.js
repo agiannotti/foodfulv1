@@ -26,7 +26,6 @@ export default class LocatePage extends Component {
 
   render() {
     const { error } = this.context;
-    console.log('resource NOW', this.context);
 
     return (
       <div>
@@ -35,30 +34,26 @@ export default class LocatePage extends Component {
           <div className='Resource__header'>
             <div>
               <h2>Available Resources</h2>
-              <div>
-                <form className='Resource__radio'>
-                  <label>Location Type</label>
-                  <div>
-                    <form>
-                      <select>
-                        <option value='item-1'></option>
-                        <option value='item-2'>Food Drive</option>
-                        <option value='item-3'>Public Park</option>
-                        <option value='item-3'>Shelter</option>
-                        <option value='item-3'>Custom</option>
-                      </select>
-                    </form>
-                  </div>
-                </form>
-              </div>
-              <div>
-                <label className='Zipcode'>Zip Code</label>
-              </div>
-              <div className='add_button'>
-                <Link to='/add'>
-                  <button type='button'>Add Location</button>
-                </Link>
-              </div>
+              <form className='Resource__radio'>
+                <label>Location Type</label>
+                <div>
+                  <select>
+                    <option value='item-1'></option>
+                    <option value='item-2'>Food Drive</option>
+                    <option value='item-3'>Public Park</option>
+                    <option value='item-3'>Shelter</option>
+                    <option value='item-3'>Custom</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div>
+              <label className='Zipcode'>Zip Code</label>
+            </div>
+            <div className='add_button'>
+              <Link to='/add'>
+                <button type='button'>Add Location</button>
+              </Link>
             </div>
           </div>
           <div className='List_Container'>
