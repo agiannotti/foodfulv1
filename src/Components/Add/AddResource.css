@@ -23,7 +23,8 @@
 }
 
 .Add_Submit_Button {
-  text-align: center;
+  display: flex;
+  margin: auto;
   height: 45px;
   width: 100px;
   border-radius: 5px;

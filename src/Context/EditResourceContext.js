@@ -1,43 +1,31 @@
 import React, { Component, createContext } from 'react';
 
-export const nullResource = {
+export const resourceToEdit = {
   title: '',
   content: '',
   zipcode: '',
-  date_published: '',
+  error: null,
 };
 
-const NewResourceContext = createContext({
-  resource: nullResource,
+const EditResourceContext = createContext({
+  resource: resourceToEdit,
   error: null,
-  setResource: () => {},
-  clearResource: () => {},
-  setError: () => {},
+  editResource: () => {},
 });
 
-export default NewResourceContext;
+export default EditResourceContext;
 
-export class NewResourceProvider extends Component {
+export class EditResourceProvider extends Component {
   state = {
-    resource: nullResource,
+    resource: resourceToEdit,
     error: null,
   };
-
-  setResource = (resource) => {
+  editResource = (resource) => {
     this.setState({ resource });
   };
-
-  clearResource = () => {
-    this.setState({ nullResource });
-  };
-
   setError = (error) => {
     console.error(error);
     this.setState({ error });
-  };
-
-  clearError = () => {
-    this.setState({ error: null });
   };
 
   render() {
@@ -50,9 +38,9 @@ export class NewResourceProvider extends Component {
       clearError: this.clearError,
     };
     return (
-      <NewResourceContext.Provider value={value}>
+      <EditResourceContext.Provider value={value}>
         {this.props.children}
-      </NewResourceContext.Provider>
+      </EditResourceContext.Provider>
     );
   }
 }

@@ -15,12 +15,11 @@ const ResourceApiService = {
     });
   },
 
-  postNewResource(title, context, zipcode, date_published) {
+  postNewResource(title, content, zipcode) {
     const resource = {
       title,
-      context,
+      content,
       zipcode,
-      date_published,
     };
     return fetch(ResourceURL, {
       method: 'POST',
@@ -30,19 +29,19 @@ const ResourceApiService = {
         Authorization: ResourceAuthorization,
       },
     }).then((res) => {
-      return !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
     });
   },
 
   deleteResource(id) {
-    return fetch(`${config.API_ENDPOINT}/resources/${id}`, {
+    return fetch(`${config.API_ENDPOINT}/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',
         Authorization: ResourceAuthorization,
       },
       getSingleResource(param) {
-        return fetch(`${config.API_ENDPOINT}/resources/${param}`, {
+        return fetch(`${config.API_ENDPOINT}/${param}`, {
           method: 'GET',
           headers: {
             'Content-type': 'application/json',
