@@ -4,16 +4,13 @@ import './index.css';
 import App from './App';
 import { Router } from 'react-router-dom';
 import history from './Context/history';
-import { ResourceProvider } from './Context/ResourcesContext';
-import { NewResourceProvider } from './Context/NewResourceContext';
+import { FoodfulProvider } from './Context/FoodfulContext';
 
 ReactDOM.render(
   <Router history={history}>
-    <NewResourceProvider>
-      <ResourceProvider>
-        <App />
-      </ResourceProvider>
-    </NewResourceProvider>
+    <FoodfulProvider>
+      <App />
+    </FoodfulProvider>
   </Router>,
   document.getElementById('root')
 );

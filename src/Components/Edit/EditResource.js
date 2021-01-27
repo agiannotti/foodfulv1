@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import './EditResource.css';
-import EditResourceContext from '../../Context/EditResourceContext';
-import ResourceApiService from '../../Services/foodful-api-service';
+import FoodfulContext from '../../Context/FoodfulContext';
+import ResourceApiService from '../../Services/FoodfulApiService';
 
 export default class EditResource extends Component {
-  static contextType = EditResourceContext;
+  static contextType = FoodfulContext;
 
   handleSubmit = (e) => {
     e.preventDefault();

@@ -14,10 +14,19 @@ export const nullComment = {
   resource_id: '',
 };
 
-const NewResourceContext = createContext({
+export const resourceToEdit = {
+  title: '',
+  content: '',
+  zipcode: '',
+  error: null,
+};
+
+const FoodfulContext = createContext({
+  resourceList: [],
   resource: nullResource,
   comment: nullComment,
   error: null,
+  setResourceList: () => {},
   setResource: () => {},
   clearResource: () => {},
   setComment: () => {},
@@ -26,12 +35,17 @@ const NewResourceContext = createContext({
   clearError: () => {},
 });
 
-export default NewResourceContext;
+export default FoodfulContext;
 
-export class NewResourceProvider extends Component {
+export class FoodfulProvider extends Component {
   state = {
+    resourceList: [],
     resource: nullResource,
+    comment: nullComment,
     error: null,
+  };
+  setResourceList = (resourceList) => {
+    this.setState({ resourceList });
   };
 
   setResource = (resource) => {
@@ -61,9 +75,11 @@ export class NewResourceProvider extends Component {
 
   render() {
     const value = {
+      resourceList: this.state.resourceList,
       resource: this.state.resource,
       comment: this.state.comment,
       error: this.state.error,
+      setResourceList: this.setResourceList,
       setResource: this.setResource,
       clearResource: this.clearResource,
       setComment: this.setComment,
@@ -72,9 +88,9 @@ export class NewResourceProvider extends Component {
       clearError: this.clearError,
     };
     return (
-      <NewResourceContext.Provider value={value}>
+      <FoodfulContext.Provider value={value}>
         {this.props.children}
-      </NewResourceContext.Provider>
+      </FoodfulContext.Provider>
     );
   }
 }

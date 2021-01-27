@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import './AddResource.css';
-import NewResourceContext from '../../Context/NewResourceContext';
-import ResourceApiService from '../../Services/foodful-api-service';
+import FoodfulContext from '../../Context/FoodfulContext';
+import FoodfulApiService from '../../Services/FoodfulApiService';
 
 export default class AddResource extends Component {
-  static contextType = NewResourceContext;
+  static contextType = FoodfulContext;
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.history.push('/locate');
 
-    ResourceApiService.postNewResource(
+    FoodfulApiService.postNewResource(
       e.target.title.value,
       e.target.content.value,
       e.target.zipcode.value

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import '../Main/Main.css';
 import './LocatePage.css';
 import Nav from '../Nav/Nav';
-import ResourceContext from '../../Context/ResourcesContext';
-import FoodfulApiService from '../../Services/foodful-api-service';
+import FoodfulContext from '../../Context/FoodfulContext';
+import FoodfulApiService from '../../Services/FoodfulApiService';
 import ResourceList from './ResourceList';
 import { Link } from 'react-router-dom';
 
 export default class LocatePage extends Component {
-  static contextType = ResourceContext;
+  static contextType = FoodfulContext;
 
   componentDidMount() {
     this.context.clearError();

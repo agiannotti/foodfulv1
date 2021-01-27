@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import './AddComment.css';
-import { Link } from 'react-router-dom';
-import NewResourceContext from '../../Context/NewResourceContext';
-import CommentApiService from '../../Services/comment-api-service';
+import FoodfulContext from '../../Context/FoodfulContext';
+import FoodfulApiService from '../../Services/FoodfulApiService';
 
 export default class AddComment extends Component {
-  static contextType = NewResourceContext;
+  static contextType = FoodfulContext;
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const modified = new Date().toISOString();
+    console.log('clicked');
+    // const modified = new Date().toISOString();
+    this.props.history.push('/locate');
 
-    CommentApiService.postNewComment(e.target.content.value)
+    FoodfulApiService.postNewComment(e.target.content.value)
       .then((res) => this.context.setComment(res))
 
       .catch(this.context.setError);
-    this.props.history.push('/locate');
   };
 
   render() {
@@ -27,12 +27,15 @@ export default class AddComment extends Component {
           <form id='add_comment_form' onSubmit={this.handleSubmit}>
             <div className='add_comment_form_css'>
               <label>Comment:</label>
-              <input type='text' name='comment' value={this.context.comment} />
-              <Link to='/locate'>
-                <button className='Comment_Submit_Button' type='submit'>
-                  Submit
-                </button>
-              </Link>
+              <input
+                type='text'
+                name='comment'
+                value={this.context.comment}
+                required
+              />
+              <button className='Comment_Submit_Button' type='submit'>
+                Submit
+              </button>
             </div>
           </form>
         </div>
