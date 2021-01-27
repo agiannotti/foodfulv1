@@ -39,11 +39,14 @@ export default FoodfulContext;
 
 export class FoodfulProvider extends Component {
   state = {
+    resources: [],
+    comments: [],
     resourceList: [],
     resource: nullResource,
     comment: nullComment,
     error: null,
   };
+
   setResourceList = (resourceList) => {
     this.setState({ resourceList });
   };
