@@ -1,6 +1,7 @@
 .Resource__main {
   display: flex;
   flex-direction: column;
+  border: none;
   border-radius: 13px;
 }
 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import './EditResource.css';
-import ResourceApiService from '../../Services/foodful-api-service';
 import EditResourceContext from '../../Context/EditResourceContext';
+import ResourceApiService from '../../Services/foodful-api-service';
 
 export default class EditResource extends Component {
   static contextType = EditResourceContext;
@@ -11,15 +11,16 @@ export default class EditResource extends Component {
     e.preventDefault();
     this.props.history.push('/locate');
     const { title, content, zipcode } = e.target;
-
     ResourceApiService.patchResource(
       title.title.value,
       content.content.value,
       zipcode.zipcode.value
     )
-      .then((res) => this.content.EditResource(res))
+      .then((res) => this.content.editResource(res))
       .catch(this.context.setError);
   };
+
+  editResource;
 
   handleClickCancel = () => {
     this.props.history.push('/');

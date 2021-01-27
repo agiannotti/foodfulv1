@@ -1,52 +1,51 @@
 import config from '../config';
-const ResourceURL = `${config.API_ENDPOINT}/resources`;
-const ResourceAuthorization = `Bearer ${config.API_KEY}`;
+const CommentURL = `${config.API_ENDPOINT}/comments`;
+const CommentAuth = `Bearer ${config.API_KEY}`;
 
-const ResourceApiService = {
-  getResources() {
-    return fetch(ResourceURL, {
+const CommentApiService = {
+  getComments() {
+    return fetch(CommentURL, {
       method: 'GET',
-      // probably not reuqired for get && delete
       headers: {
         'Content-type': 'application/json',
-        Authorization: ResourceAuthorization,
+        Authorization: CommentAuth,
       },
     }).then((res) => {
       return !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
     });
   },
 
-  postNewResource(title, content, zipcode) {
-    const resource = {
-      title,
+  postNewComment(content, date_created, resource_id) {
+    const comment = {
       content,
-      zipcode,
+      date_created,
+      resource_id,
     };
-    return fetch(ResourceURL, {
+    return fetch(CommentURL, {
       method: 'POST',
-      body: JSON.stringify(resource),
+      body: JSON.stringify(comment),
       headers: {
         'Content-type': 'application/json',
-        Authorization: ResourceAuthorization,
+        Authorization: CommentAuth,
       },
     }).then((res) => {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
     });
   },
 
-  deleteResource(id) {
+  deleteComment(id) {
     return fetch(`${config.API_ENDPOINT}/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',
-        Authorization: ResourceAuthorization,
+        Authorization: CommentAuth,
       },
-      getSingleResource(param) {
+      getSingleComment(param) {
         return fetch(`${config.API_ENDPOINT}/${param}`, {
           method: 'GET',
           headers: {
             'Content-type': 'application/json',
-            Authorization: ResourceAuthorization,
+            Authorization: CommentAuth,
           },
         }).then((res) => {
           !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
@@ -55,13 +54,13 @@ const ResourceApiService = {
     });
   },
 
-  patchResource(id, title, content, zipcode, date_published) {
-    return fetch(`${ResourceURL}/${id}`, {
+  patchComment(id, title, content, zipcode, date_published) {
+    return fetch(`${CommentURL}/${id}`, {
       method: 'POST',
       body: JSON.stringify(id, title, content, zipcode, date_published),
       headers: {
         'Content-type': 'application/json',
-        Authorization: ResourceAuthorization,
+        Authorization: CommentAuth,
       },
     }).then((res) => {
       return !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
@@ -69,4 +68,4 @@ const ResourceApiService = {
   },
 };
 
-export default ResourceApiService;
+export default CommentApiService;
