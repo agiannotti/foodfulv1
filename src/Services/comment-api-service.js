@@ -1,4 +1,5 @@
 import config from '../config';
+
 const CommentURL = `${config.API_ENDPOINT}/comments`;
 const CommentAuth = `Bearer ${config.API_KEY}`;
 
@@ -31,6 +32,9 @@ const CommentApiService = {
     }).then((res) => {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
     });
+    // testing if state can be modified through context to use goBack() + assign targetResourceId
+    // .then((data) => {addComment(data); this.setState({ content: '', date_created: '', resource_id: '',});
+    // this.props.history.goBack();
   },
 
   deleteComment(id) {

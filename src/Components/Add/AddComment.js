@@ -11,12 +11,12 @@ export default class AddComment extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const modified = new Date().toISOString();
-    this.props.history.push('/locate');
 
     CommentApiService.postNewComment(e.target.content.value)
       .then((res) => this.context.setComment(res))
 
       .catch(this.context.setError);
+    this.props.history.push('/locate');
   };
 
   render() {
