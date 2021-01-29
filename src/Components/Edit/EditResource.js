@@ -3,6 +3,7 @@ import Nav from '../Nav/Nav';
 import './EditResource.css';
 import FoodfulContext from '../../Context/FoodfulContext';
 import ResourceApiService from '../../Services/FoodfulApiService';
+import DeleteButton from '../Utilities/DeleteButton';
 
 export default class EditResource extends Component {
   static contextType = FoodfulContext;
@@ -46,6 +47,7 @@ export default class EditResource extends Component {
               >
                 Save Edit
               </button>
+              <DeleteButton />
             </div>
           </form>
         </div>

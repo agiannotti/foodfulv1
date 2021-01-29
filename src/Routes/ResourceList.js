@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ResourcesContext from '../Context/ResourcesContext';
 import ResourceApiService from '../services/foodful-api-service';
-import Resources from '../Components/Foodful/Resources';
+import Resources from '../Components/Foodful/ResourceList';
 
 export default class ResourceListPage extends Component {
   static contextType = ResourcesContext;
@@ -16,7 +16,7 @@ export default class ResourceListPage extends Component {
   renderResources() {
     const { resourceList = [] } = this.context;
     return resourceList.map((resource) => (
-      <Resources key={resource.id} resource={resource} />
+      <resourceList key={resource.id} resource={resource} />
     ));
   }
 

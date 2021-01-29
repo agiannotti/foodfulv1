@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './ResourceList.css';
 import { Link } from 'react-router-dom';
-
+import DeleteButton from '../Utilities/DeleteButton';
 export default class ResourceList extends Component {
   render() {
     const { resource } = this.props;
@@ -23,6 +23,7 @@ export default class ResourceList extends Component {
               Edit Details
             </button>
           </Link>
+          <DeleteButton />
         </div>
       </div>
     );

@@ -33,6 +33,7 @@ const FoodfulContext = createContext({
   clearComment: () => {},
   setError: () => {},
   clearError: () => {},
+  deleteItem: () => {},
 });
 
 export default FoodfulContext;

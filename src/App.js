@@ -10,6 +10,8 @@ import Help from './Components/Help/Help';
 import AddResource from './Components/Add/AddResource';
 import AddComment from './Components/Add/AddComment';
 import EditResource from './Components/Edit/EditResource';
+import DeleteButton from './Components/Utilities/DeleteButton';
+import CancelButton from './Components/Utilities/CancelButton';
 
 // import PrivateRoute from './Components/Utilities/PrivateRoute';
 
@@ -24,6 +26,8 @@ function App() {
         <Route exact path='/add' component={AddResource} />
         <Route exact path='/comment' component={AddComment} />
         <Route exact path='/edit' component={EditResource} />
+        <Route exact path='/delete' component={DeleteButton} />
+        <Route exact path='/cancel' component={CancelButton} />
       </Router>
     </div>
   );
