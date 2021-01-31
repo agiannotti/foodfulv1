@@ -12,6 +12,7 @@
   font-weight: 600;
   filter: drop-shadow(0 0.1rem 0.1rem #000000);
   border-radius: 14px;
+  text-align: center;
 }
 
 .add_resource_form_css input {
@@ -20,6 +21,7 @@
   width: 180px;
   margin: auto;
   margin-bottom: 22px;
+  text-align: center;
 }
 
 .Add_Submit_Button {
@@ -29,4 +31,5 @@
   width: 100px;
   border-radius: 5px;
   border-style: none;
+  text-align: center;
 }

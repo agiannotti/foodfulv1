@@ -27,13 +27,13 @@ const FoodfulContext = createContext({
   comment: nullComment,
   error: null,
   setResourceList: () => {},
+  removeFromResourceList: () => {},
   setResource: () => {},
   clearResource: () => {},
   setComment: () => {},
   clearComment: () => {},
   setError: () => {},
   clearError: () => {},
-  deleteItem: () => {},
 });
 
 export default FoodfulContext;
@@ -77,6 +77,14 @@ export class FoodfulProvider extends Component {
     this.setState({ error: null });
   };
 
+  removeFromResourceList = (id) => {
+    this.setState({
+      resourceList: this.state.resourceList.filter((resource) => {
+        return resource.id !== id;
+      }),
+    });
+  };
+
   render() {
     const value = {
       resourceList: this.state.resourceList,
@@ -90,6 +98,7 @@ export class FoodfulProvider extends Component {
       clearComment: this.clearComment,
       setError: this.setError,
       clearError: this.clearError,
+      removeFromResourceList: this.removeFromResourceList,
     };
     return (
       <FoodfulContext.Provider value={value}>

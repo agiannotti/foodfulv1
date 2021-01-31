@@ -3,7 +3,7 @@ const ResourceURL = `${config.API_ENDPOINT}/resources`;
 const CommentURL = `${config.API_ENDPOINT}/comments`;
 const Authorization = `Bearer ${config.API_KEY}`;
 
-const ResourceApiService = {
+const FoodfulApiService = {
   getResources() {
     return fetch(ResourceURL, {
       method: 'GET',
@@ -34,24 +34,27 @@ const ResourceApiService = {
     });
   },
 
-  deleteResource(id) {
-    return fetch(`${config.API_ENDPOINT}/${id}`, {
+  getById(id) {
+    return fetch(`${ResourceURL}/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: Authorization,
+      },
+    }).then((res) => {
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
+    });
+  },
+
+  deleteById(id) {
+    return fetch(`${ResourceURL}/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',
         Authorization: Authorization,
       },
-      getSingleResource(param) {
-        return fetch(`${config.API_ENDPOINT}/${param}`, {
-          method: 'GET',
-          headers: {
-            'Content-type': 'application/json',
-            Authorization: Authorization,
-          },
-        }).then((res) => {
-          !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
-        });
-      },
+    }).then((res) => {
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
     });
   },
 
@@ -102,23 +105,26 @@ const ResourceApiService = {
   },
 
   deleteComment(id) {
-    return fetch(`${config.API_ENDPOINT}/${id}`, {
+    return fetch(`${CommentURL}/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',
         Authorization: Authorization,
       },
-      getSingleComment(param) {
-        return fetch(`${config.API_ENDPOINT}/${param}`, {
-          method: 'GET',
-          headers: {
-            'Content-type': 'application/json',
-            Authorization: Authorization,
-          },
-        }).then((res) => {
-          !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
-        });
+    }).then((res) => {
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
+    });
+  },
+
+  getSingleComment(param) {
+    return fetch(`${CommentURL}/${param}`, {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: Authorization,
       },
+    }).then((res) => {
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
     });
   },
 
@@ -136,4 +142,4 @@ const ResourceApiService = {
   },
 };
 
-export default ResourceApiService;
+export default FoodfulApiService;

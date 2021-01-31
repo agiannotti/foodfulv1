@@ -8,7 +8,7 @@
 .Resource__details {
   border-style: solid;
   width: 92%;
-  max-height: 600px;
+  height: auto;
   margin: auto;
   margin-bottom: 36px;
   padding-top: 1px;
@@ -29,7 +29,7 @@
 
 .Resource__header {
   margin: 5px;
-  padding-bottom: 175px;
+  padding-bottom: 15px;
 }
 
 .Resource__desc {

@@ -2,17 +2,16 @@ import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import './EditResource.css';
 import FoodfulContext from '../../Context/FoodfulContext';
-import ResourceApiService from '../../Services/FoodfulApiService';
-import DeleteButton from '../Utilities/DeleteButton';
+import FoodfulApiService from '../../Services/FoodfulApiService';
+// import DeleteButton from '../Utilities/DeleteButton';
 
 export default class EditResource extends Component {
   static contextType = FoodfulContext;
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.history.push('/locate');
     const { title, content, zipcode } = e.target;
-    ResourceApiService.patchResource(
+    FoodfulApiService.patchResource(
       title.title.value,
       content.content.value,
       zipcode.zipcode.value
@@ -21,13 +20,13 @@ export default class EditResource extends Component {
       .catch(this.context.setError);
   };
 
-  editResource;
-
   handleClickCancel = () => {
     this.props.history.push('/');
   };
 
   render() {
+    const { resource } = this.props;
+    console.log('resource', resource);
     return (
       <div>
         <Nav />
@@ -47,7 +46,7 @@ export default class EditResource extends Component {
               >
                 Save Edit
               </button>
-              <DeleteButton />
+              {/* <DeleteButton resource={resource} /> */}
             </div>
           </form>
         </div>

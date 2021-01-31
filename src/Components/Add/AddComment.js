@@ -9,7 +9,7 @@ export default class AddComment extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log('clicked');
+    console.log('clicked', e);
     // const modified = new Date().toISOString();
     this.props.history.push('/locate');
 
@@ -24,9 +24,9 @@ export default class AddComment extends Component {
       <div>
         <Nav />
         <div>
-          <form id='add_comment_form' onSubmit={this.handleSubmit}>
+          <form className='add_comment_form' onSubmit={this.handleSubmit}>
             <div className='add_comment_form_css'>
-              <label>Comment:</label>
+              <label htmlFor='comment'>Comment:</label>
               <input
                 type='text'
                 name='comment'

@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import './ResourceList.css';
 import { Link } from 'react-router-dom';
 import DeleteButton from '../Utilities/DeleteButton';
+// import { render } from '@testing-library/react';
+// import FoodfulApiService from '../../Services/FoodfulApiService';
+import FoodfulContext from '../../Context/FoodfulContext';
+
 export default class ResourceList extends Component {
+  static contextType = FoodfulContext;
+
   render() {
     const { resource } = this.props;
 
@@ -23,7 +29,7 @@ export default class ResourceList extends Component {
               Edit Details
             </button>
           </Link>
-          <DeleteButton />
+          <DeleteButton resource={resource} />
         </div>
       </div>
     );
