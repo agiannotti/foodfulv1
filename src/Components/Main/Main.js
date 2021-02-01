@@ -2,14 +2,16 @@ import React from 'react';
 import './Main.css';
 import { Link } from 'react-router-dom';
 import placeholder from '../../Images/Convention-logo.png';
-import Nav from '../Nav/Nav';
+// import background from '../../Images/rootsnip.png';
+import NavBar from '../Nav/NavBar';
 
 export default function Main() {
   return (
     <div className='border-main'>
+      {/* <img src={background} alt='' srcset='' /> */}
       <header className='tiny__header'></header>
       <section className='App-header'>
-        <Nav />
+        <NavBar />
       </section>
       <section className='main-section'>
         <div>
@@ -23,9 +25,8 @@ export default function Main() {
             />
           </h1>
         </div>
-        <h1>Foodful</h1>
         <div className='main-paragraph'>
-          <p>Locate free food, or provide a bit of your own.</p>
+          <h1>Locate free food, or provide a bit of your own.</h1>
         </div>
         <div>
           <Link to='/locate'>
@@ -34,7 +35,7 @@ export default function Main() {
         </div>
       </section>
       <br />
-      {/* <footer className='tiny__footer'>&#169; AGiannotti 2021</footer> */}
+      <footer className='tiny__footer'>&#169; AGiannotti 2021</footer>
     </div>
   );
 }

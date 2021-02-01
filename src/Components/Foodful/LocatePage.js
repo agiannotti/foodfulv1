@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../Main/Main.css';
 import './LocatePage.css';
-import Nav from '../Nav/Nav';
+import NavBar from '../Nav/NavBar';
 import FoodfulContext from '../../Context/FoodfulContext';
 import FoodfulApiService from '../../Services/FoodfulApiService';
 import ResourceList from './ResourceList';
@@ -29,7 +29,7 @@ export default class LocatePage extends Component {
 
     return (
       <div>
-        <Nav />
+        <NavBar />
         <div className='Resource__main'>
           <div className='Resource__header'>
             <div>

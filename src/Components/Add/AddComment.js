@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Nav from '../Nav/Nav';
+import NavBar from '../Nav/NavBar';
 import './AddComment.css';
 import FoodfulContext from '../../Context/FoodfulContext';
 import FoodfulApiService from '../../Services/FoodfulApiService';
@@ -22,7 +22,7 @@ export default class AddComment extends Component {
   render() {
     return (
       <div>
-        <Nav />
+        <NavBar />
         <div>
           <form className='add_comment_form' onSubmit={this.handleSubmit}>
             <div className='add_comment_form_css'>

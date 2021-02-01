@@ -1,8 +1,7 @@
 import React from 'react';
-// import { Route } from 'react-router-dom';
 import NavBar from '../Nav/NavBar';
 
-export default function PrivateRoute() {
+export default function Contact() {
   return (
     <div>
       <NavBar />

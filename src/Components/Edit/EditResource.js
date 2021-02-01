@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Nav from '../Nav/Nav';
+import NavBar from '../Nav/NavBar';
 import './EditResource.css';
 import FoodfulContext from '../../Context/FoodfulContext';
 import FoodfulApiService from '../../Services/FoodfulApiService';
@@ -29,7 +29,7 @@ export default class EditResource extends Component {
     console.log('resource', resource);
     return (
       <div>
-        <Nav />
+        <NavBar />
         <div>
           <form id='edit_resource_form'>
             <div className='edit_resource_form_css'>

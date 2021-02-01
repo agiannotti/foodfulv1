@@ -1,11 +1,12 @@
 import React from 'react';
-import Nav from '../Nav/Nav';
+import NavBar from '../Nav/NavBar';
 import placeholder from '../../Images/Convention-logo.png';
+// import './Mission.css';
 
 export default function Mission() {
   return (
     <div>
-      <Nav />
+      <NavBar />
       <br />
       <section className='middle-section'>
         <div>
