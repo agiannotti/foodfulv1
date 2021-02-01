@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Burger from './Burger';
-import logo from '../../Images/rootsnip.png';
 
 const Nav = styled.nav`
   width: 100%;
